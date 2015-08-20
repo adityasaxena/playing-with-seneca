@@ -54,3 +54,6 @@ seneca.act({
 }, function(err, result) {
     console.log( err, result);
 });
+
+//SENECA FLAG TO DEBUG WITH
+// -- seneca.log.all
