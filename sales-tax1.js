@@ -1,9 +1,5 @@
 var seneca = require('seneca')();
 
-var rates = {
-  'India' : 40
-};
-
 function resultObj (rate, net) {
   return {
    total:  net * (1 + rate  || 0)
@@ -19,15 +15,15 @@ seneca.add({
 
 seneca.add({
   cmd: 'salestax',
-  prop: 'country' 
+  country: 'India'
 }, function(args, callback) {
-  var rate = rates[args.country];
+  var rate = 0.4;
   callback(null, resultObj(rate, args.net));
 });
 
 seneca.act({
   cmd: 'salestax',
-  net: 120
+  net: 100
 }, function(err, result) {
    console.log( err, result);
 });
