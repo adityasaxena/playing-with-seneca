@@ -15,7 +15,7 @@ server.register(Inert, function (err) {
 // Add the route
 server.route({
     method: 'GET',
-    path:'/foo/bar/baz/{filename}', /// the first few parameters do not indicate the directory, it is just indicatory of your route
+    path:'/foo/bar/{baz}/{filename}', /// the first few parameters do not indicate the directory, it is just indicatory of your route
     handler: {
         directory: {
             path: './public'
